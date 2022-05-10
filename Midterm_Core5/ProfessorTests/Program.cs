@@ -13,6 +13,8 @@ namespace ProfessorTests
             TestGetters();
             Console.WriteLine();
             TestSetters();
+            Console.WriteLine();
+            ExceptionTest();
         }
 
         static void TestConstructors()
@@ -42,6 +44,19 @@ namespace ProfessorTests
             Console.WriteLine(setTest);
         }
 
+        static void ExceptionTest()
+        {
+            Professor exceptTest = new Professor();
+            try
+            {
+                exceptTest.LNumber = "ThisshouldThrow";
+            }
+            catch
+            {
+                Console.WriteLine("Exeception thrown: Did not start with L, not 9 characters");
+            }
 
+
+        }
     }
 }
